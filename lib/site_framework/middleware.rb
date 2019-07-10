@@ -28,6 +28,10 @@ module SiteFramework
           end
         end
       end
+      
+      Rails.application.send :define_singleton_method, 'domain' do
+        Rails.application.fetch_domain
+      end
 
       Rails.application.send :define_singleton_method, 'site' do
         site = nil
