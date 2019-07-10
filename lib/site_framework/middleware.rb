@@ -22,7 +22,7 @@ module SiteFramework
       unless Rails.application.respond_to? :fetch_domain
         Rails.application.send :define_singleton_method, 'fetch_domain' do
           if defined? ActiveRecord
-            Domain.find_by(nam: Rails.application.domain_name)
+            Domain.find_by(name: Rails.application.domain_name)
           elsif defined? Mongoid
             Site.where('domains.name' => Rails.application.domain_name).domains.first
           end
