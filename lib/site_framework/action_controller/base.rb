@@ -1,19 +1,14 @@
 ActionController::Base.class_eval do
+  private def set_template_path
+    if Rails.application.respond_to?(:site) && Rails.application.site.default_template.present?
+      site = Rails.application.site
+      return nil unless site.default_template.present?
 
-  private
-
-  def set_template_path
-    if request.respond_to?(:site) && request.site
-      # We are in site namespace
-      unless request.site.default_template.blank?
-        prefix = SiteFramework::Engine.view_path_prefix
-        prepend_view_path "#{prefix}/#{request.site.default_template}"
-      end
+      prefix = SiteFramework::Engine.view_path_prefix
+      prepend_view_path "#{prefix}/#{site.default_template}"
     end
   end
-
 end
-
 
 ActionController::Base.instance_eval do
   before_action :set_template_path
