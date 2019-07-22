@@ -1,18 +1,17 @@
-# SiteFramework
-[![Gem Version](https://badge.fury.io/rb/site_framework.png)](http://badge.fury.io/rb/site_framework)
-[![Downloads](https://img.shields.io/gem/dt/site_framework.svg)](http://rubygems/gems/site_framework)
-
-A site framework for Ruby on Rails web framework inspired by Django site fremework.
+# Sites
+A framework for Ruby on Rails web framework inspired by Django site fremework.
 The idea of this gem to transparently make Rails apps to work with different domains.
 
-**Warning**: This gem is still on development. I'll be happy to have your feedback.
+## What is BODEV?
+
+BODEV is the open-sourced work produced by the development staff at [Buildout, Inc](https://buildout.com). This library was originally forked from [Yellowen](https://github.com/Yellowen/site_framework), but appears to be no longer supported. The concept, however, is still valid ([Django still supports their implementation](https://docs.djangoproject.com/en/2.2/ref/contrib/sites/)), so we're taking ownership of the library and publishing our fork with updates for continued usage.
 
 ## Installation
 
-Add `site_framework` to your `Gemfile`:
+Add `bodev-sites` to your `Gemfile`:
 
 ```ruby
-gem 'site_framework'
+gem "bodev-sites", require: "SiteFramework"
 ```
 
 and after installing your project dependencies using `bundle install` command. Install
@@ -132,12 +131,11 @@ By this feature each site can have their own set of views.
 5. Create new Pull Request
 
 ## Credit
-![Yellowen](http://www.yellowen.com/images/logo.png)
+![Buildout](https://www.buildout.com)
 
-**SiteFramework**  is maintained and funded by Yellowen. Whenever a code snippet is borrowed or inspired by existing code,
-we try to credit the original developer/designer in our source code. Let us know if you think we have missed to do this.
+**bodev-sites** development is currently being funded and maintained by Buildout.
 
+Original implementation provided by Yellowen.
 
 # License
-
-**SiteFramework** is Copyright © 2014-2015 Yellowen. It is free software, and may be redistributed under the terms specified in the LICENSE file.
+**bodev-sites** is Copyright © 2019 Buildout, Inc. It is free software and may be redistributed under the terms specified in the LICENSE file.
