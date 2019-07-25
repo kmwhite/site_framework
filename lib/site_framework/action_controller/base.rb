@@ -1,7 +1,8 @@
 ActionController::Base.class_eval do
   private def set_template_path
-    if Rails.application.respond_to?(:site) && Rails.application.site.default_template.present?
-      site = Rails.application.site
+    site = Rails.application.site if Rails.application.respond_to?(:site)
+
+    if site.present?
       return nil unless site.default_template.present?
 
       prefix = SiteFramework::Engine.view_path_prefix
